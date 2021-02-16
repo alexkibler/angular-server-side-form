@@ -9,6 +9,8 @@ import { QuestionService } from './services/question.service';
   template: `
     <div>
       <h2>Job Application for Heroes</h2>
+      <button (click)="getQuestions('AU')">Get AU Questions</button>
+      <button (click)="getQuestions('GB')">Get GB Questions</button>
       <app-dynamic-form [questions]="questions" *ngIf="questions"></app-dynamic-form>
     </div>
   `,
@@ -17,10 +19,15 @@ import { QuestionService } from './services/question.service';
 export class AppComponent {
   questions: QuestionBase<any>[];
 
-  constructor(service: QuestionService) {
-    service.getQuestions('AU').subscribe(questions => {
+  constructor(private questionService: QuestionService) {
+  }
+
+  getQuestions(country: string) {
+    
+    this.questionService.getQuestions(country).subscribe(questions => {
       this.questions = questions;
     });
+
   }
 }
 
