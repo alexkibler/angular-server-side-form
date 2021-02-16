@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { QuestionService } from './question.service';
-import { QuestionBase } from './question-base';
+import { QuestionBase } from './models/question-base';
 import { Observable } from 'rxjs';
+import { QuestionService } from './services/question.service';
 
 @Component({
   selector: 'app-root',
