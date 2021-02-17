@@ -7,6 +7,7 @@ import { of, pipe } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
 import { QuestionResponseModel } from "../models/question-response-model";
+import { DateQuestion } from "../models/question-date";
 
 @Injectable()
 export class QuestionService {
@@ -19,10 +20,10 @@ export class QuestionService {
         switch (question.controlType) {
           case 'dropdown':
             return new DropdownQuestion({...question});
-            break;
           case 'textbox':
             return new TextboxQuestion({...question});
-            break;
+          case 'date':
+            return new DateQuestion({...question});
           default:
             throw `Question controlType ${question.controlType} not recognized`;
         }

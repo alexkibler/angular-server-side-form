@@ -4,6 +4,7 @@
       "controlType": "dropdown",
       "key": "brave",
       "label": "Bravery Rating",
+      "value":"great",
       "options": [
           { "key": "solid", "value": "Solid" },
           { "key": "great", "value": "Great" },
@@ -33,6 +34,13 @@
       "label": "Password",
       "type": "password",
       "order": 2
+    },
+    {
+      "controlType": "date",
+      "key": "birthdate",
+      "label": "Birthday",
+      "value": "1992-07-05",
+      "order": -2
     }
   ]
 }
