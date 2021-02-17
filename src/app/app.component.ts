@@ -13,8 +13,7 @@ import { QuestionService } from './services/question.service';
       <button (click)="getQuestions('GB')">Get GB Questions</button>
       <app-dynamic-form [questions]="questions" *ngIf="questions"></app-dynamic-form>
     </div>
-  `,
-  providers:  [QuestionService]
+  `
 })
 export class AppComponent {
   questions: QuestionBase<any>[];

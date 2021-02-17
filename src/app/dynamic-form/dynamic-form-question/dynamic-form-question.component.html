@@ -17,7 +17,10 @@
 
   </div>
 
-  <div class="errorMessage" *ngIf="!isValid">{{question.label}} is required</div>
+  <div class="errorMessage" *ngIf="!isValid">
+    <!-- TODO: Make these messages more human friendly -->
+    <p *ngFor="let error of form.controls[question.key].errors | keyvalue">{{error.key}}</p>
+  </div>
 </div>
 
 

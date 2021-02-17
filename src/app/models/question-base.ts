@@ -1,8 +1,11 @@
+import { ControlValidator } from "./validator";
+
+
 export class QuestionBase<T> {
   value: T;
   key: string;
   label: string;
-  required: boolean;
+  validators: ControlValidator[];
   order: number;
   controlType: string;
   type: string;
@@ -14,6 +17,7 @@ export class QuestionBase<T> {
       label?: string;
       required?: boolean;
       order?: number;
+      validators?: ControlValidator[];
       controlType?: string;
       type?: string;
       options?: {key: string, value: string}[];
@@ -21,7 +25,7 @@ export class QuestionBase<T> {
     this.value = options.value;
     this.key = options.key || '';
     this.label = options.label || '';
-    this.required = !!options.required;
+    this.validators = options.validators || [];
     this.order = options.order === undefined ? 1 : options.order;
     this.controlType = options.controlType || '';
     this.type = options.type || '';

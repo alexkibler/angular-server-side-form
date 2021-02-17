@@ -6,9 +6,12 @@ import { AppComponent } from './app.component';
 import { DynamicFormComponent } from './dynamic-form/dynamic-form.component';
 import { DynamicFormQuestionComponent } from './dynamic-form/dynamic-form-question/dynamic-form-question.component';
 import { HttpClientModule } from '@angular/common/http';
+import { QuestionControlService } from './services/question-control.service';
+import { QuestionService } from './services/question.service';
 
 @NgModule({
   imports: [ BrowserModule, ReactiveFormsModule, HttpClientModule ],
+  providers: [QuestionControlService, QuestionService],
   declarations: [ AppComponent, DynamicFormComponent, DynamicFormQuestionComponent ],
   bootstrap: [ AppComponent ]
 })

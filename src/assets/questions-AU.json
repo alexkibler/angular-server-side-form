@@ -18,7 +18,16 @@
       "key": "firstName",
       "label": "First name",
       "value": "Bombasto",
-      "required": true,
+      "validators": [
+        {
+          "name": "minLength",
+          "value": 2
+        },
+        {
+          "name": "required",
+          "value": true
+        }
+      ],
       "order": 0
     },
     {
